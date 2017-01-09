@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>	
+<head>
+	
+		<title> </title>
+		<meta charset="utf-8">	
+		<meta name="author" content="Dylan Wolfgram">
+		<meta name="description" content="Introducing properties and styles">
+		<style>
+		
+		#container {
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+		.box{
+			width: 100px;
+			min-height: 30vh;
+			flex: 0 1 100px;
+		}
+		
+		#one {
+			background-color: fuchsia;
+		}
+		
+		#two {
+			background-color: aqua;
+		}
+		
+		#three {
+			background-color: lime;
+		}
+		</style>
+		
+</head>
+<body>
+
+	<div id="container">
+		<div class="box" id="one"></div>
+		<div class="box" id="two"></div>
+		<div class="box" id="three"></div>
+	</div>
+	
+	<audio id="hope">
+			<source src="hope.mp3" type="audio/mpeg">
+	</audio>
+	
+	
+	<script>
+		var hope= document.getElementById("hope");
+		var boxes = document.getElementsByClassName("box");
+		document.onload=start();
+		
+		function loop(){
+			console.log("looping")
+			
+		for (var i = 0; i < boxes.length; i++ ){
+			
+		var random = Math.floor(Math.random()*100)+1;
+		var box = boxes[i];
+		
+			box.style.width = random + "%"; 
+		}
+		}
+		
+		function start(){
+		hope.play();
+		setInterval(loop, 200);
+		
+	}
+		
+	
+		
+	
+	/*
+		[ ] set up loop to run every 500 milliseconds
+		[ ] grab all boxes
+		[ ] loop through boxes
+		[ ] generate random width value for each box and apply
+		[ ] add sound file to page and play on page load
+	*/
+	
+	
+	</script>
+		
+</body>
+
+
+</html>	
